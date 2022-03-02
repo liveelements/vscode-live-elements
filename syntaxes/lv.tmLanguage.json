@@ -86,12 +86,6 @@
 					"include": "#type-alias-declaration"
 				},
 				{
-					"include": "#import-equals-declaration"
-				},
-				{
-					"include": "#import-declaration"
-				},
-				{
 					"include": "#export-declaration"
 				},
 				{
