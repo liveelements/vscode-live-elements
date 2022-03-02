@@ -4,6 +4,8 @@
     "description": "An extension for Visual Studio Code providing syntax highlighting for Live Elements Language.",
     "version": "0.1.0",
     "author": "Dinu SV",
+    "publisher": "dinusv",
+    "repository": "https://github.com/live-keys/vscode-live-elements",
     "engines": {
         "vscode": "^1.64.0"
     },
