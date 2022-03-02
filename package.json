@@ -1,0 +1,26 @@
+{
+    "name": "liveelements",
+    "displayName": "Live Elements",
+    "description": "An extension for Visual Studio Code providing syntax highlighting for Live Elements Language.",
+    "version": "0.1.0",
+    "author": "Dinu SV",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lv",
+            "aliases": ["Live Elements", "lv"],
+            "extensions": [".lv"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lv",
+            "scopeName": "source.lv",
+            "path": "./syntaxes/lv.tmLanguage.json"
+        }]
+    }
+}
