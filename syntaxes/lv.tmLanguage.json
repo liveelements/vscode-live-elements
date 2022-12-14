@@ -74,6 +74,9 @@
 					"include": "#class-declaration"
 				},
 				{
+					"include": "#component-declaration"
+				},
+				{
 					"include": "#interface-declaration"
 				},
 				{
@@ -87,6 +90,9 @@
 				},
 				{
 					"include": "#export-declaration"
+				},
+				{
+					"include": "#elements-import-declaration"
 				},
 				{
 					"name": "storage.modifier.js",
@@ -1646,6 +1652,30 @@
 				}
 			]
 		},
+		"component-declaration": {
+			"name": "meta.class.js",
+			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(\\bexport)\\s+)?(?:(\\bdeclare)\\s+)?\\b(?:(abstract)\\s+)?\\b(component|instance)\\b(?=\\s+|/[/*])",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.export.js"
+				},
+				"2": {
+					"name": "storage.modifier.js"
+				},
+				"3": {
+					"name": "storage.modifier.js"
+				},
+				"4": {
+					"name": "storage.type.class.js"
+				}
+			},
+			"end": "(?<=\\})",
+			"patterns": [
+				{
+					"include": "#class-declaration-or-expression-patterns"
+				}
+			]
+		},
 		"class-expression": {
 			"name": "meta.class.js",
 			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(abstract)\\s+)?(class)\\b(?=\\s+|[<{]|\\/[\\/*])",
@@ -1730,7 +1760,7 @@
 			]
 		},
 		"class-or-interface-heritage": {
-			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:\\b(extends|implements)\\b)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+			"begin": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(extends|implements|\\<))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
 			"beginCaptures": {
 				"1": {
 					"name": "storage.modifier.js"
@@ -2134,6 +2164,14 @@
 							"match": "([_$[:alpha:]][_$[:alnum:]]*)"
 						}
 					]
+				}
+			]
+		},
+		"elements-import-declaration":{
+            "patterns": [
+				{
+					"name": "keyword.control.import.js",
+					"match": "\\b(import)\\b"
 				}
 			]
 		},
